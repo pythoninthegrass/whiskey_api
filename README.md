@@ -18,15 +18,15 @@ All endpoints are listed and documented here: https://evening-citadel-85778.hero
 
 ## Technologies used
 
-<b>Code:</b> Written in Python with the Django REST API framework.
+**Code:** Written in Python with the Django REST API framework.
 
-<b>Data gathering and analysis:</b> PRAW, pandas, and numpy.
+**Data gathering and analysis:** PRAW, pandas, and numpy.
 
-<b>Text search:</b> Elasticsearch.
+**Text search:** Elasticsearch.
 
-<b>Image hosting:</b> Cloudinary.
+**Image hosting:** Cloudinary.
 
-<b>Continuous integration:</b> Travis and Coveralls.
+**Continuous integration:** Travis and Coveralls.
 
 ## Credits
 
