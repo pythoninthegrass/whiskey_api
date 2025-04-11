@@ -10,10 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
-import os
 import cloudinary
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import os
+from decouple import config
 from django.core.urlresolvers import reverse_lazy
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,8 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ['SECRET_KEY']
-#SECRET_KEY = '4$hq0n_7bm1vn822n)#3pr9j(a&4lo(wac37jk(@gh9#0p8mio'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -88,6 +86,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'WhiskeyProof.wsgi.application'
 
 
+# TODO: fill out via python-decouple
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -171,9 +170,9 @@ LOGIN_REDIRECT_URL = reverse_lazy("list_users")
 
 
 cloudinary.config(
-  cloud_name="dt4sawqjx",
-  api_key="274364529955563",
-  api_secret=os.environ["CLOUDINARY_SECRET"]
+  cloud_name=config("CLOUDINARY_CLOUD_NAME"),
+  api_key=config("CLOUDINARY_API_KEY"),
+  api_secret=config("CLOUDINARY_SECRET")
 )
 
 
